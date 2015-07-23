@@ -18,13 +18,13 @@ public final class PrimeUtils {
         isPrime[0] = false;
         isPrime[1] = false;
         
-        for (int i = 3; i <= limit; ++i) {
+        for (int i = 2; i <= limit; ++i) {
             isPrime[i] = true;
         }
         
         for (int i = 2; i <= limit; ++i) {
             if (isPrime[i]) {
-                for (int j = 2*i; j <= limit; j += i) {
+                for (int j = 2 * i; j <= limit; j += i) {
                     isPrime[j] = false;
                 }
             }
