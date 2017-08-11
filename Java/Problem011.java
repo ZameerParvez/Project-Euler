@@ -8,11 +8,10 @@ public class Problem011 extends Problem{
 	@Override
 	public String solve() {
 		int max = 0;
-		String path = "/mnt/DATA/Documents/eclipse/ProjectEuler/src/Problem011Input";
+		String path = "src/Problem011-data.txt";
 		ArrayList<ArrayList<Integer>> grid;
 		try {
 			grid = initGrid(path);
-			System.out.println(toString(grid));
 			int maxDown = maxDown(grid);
 			int maxRight = maxRight(grid);
 			int maxDiagonalDown = maxDiagonalDown(grid);

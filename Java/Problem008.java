@@ -21,7 +21,7 @@ public class Problem008 extends Problem {
     public String solve() {
         String number = "";
         try {
-            number = readFile("Problem008-data.txt");
+            number = readFile("src/Problem008-data.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,6 +36,7 @@ public class Problem008 extends Problem {
             }
         }
         return "" + maxProduct;
+
     }
     
     public static void main(String args[]) {
