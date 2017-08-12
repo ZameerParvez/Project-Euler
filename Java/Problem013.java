@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Problem013 extends Problem{
 	
+	@Override
 	public String solve() {
 		BigInteger sum = BigInteger.ZERO;
 		List<BigInteger> input = inputNumbers("src/Problem013-data.txt");
