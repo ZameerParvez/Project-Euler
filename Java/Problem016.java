@@ -6,17 +6,8 @@ public class Problem016 extends Problem{
 	public String solve() {
 		int n = 2;
 		int m = 1000;
-		BigInteger num = pow(BigInteger.valueOf(n), BigInteger.valueOf(m));
+		BigInteger num = CommonUtils.pow(BigInteger.valueOf(n), BigInteger.valueOf(m));
 		return sumDigits(num).toString();
-	}
-	
-	public BigInteger pow(BigInteger base, BigInteger exponent) {
-		BigInteger ans = BigInteger.ONE;
-		while (!exponent.equals(BigInteger.ZERO)) {
-			ans = ans.multiply(base);
-			exponent = exponent.subtract(BigInteger.ONE);
-		}
-		return ans;
 	}
 	
 	public BigInteger sumDigits(BigInteger n) {
