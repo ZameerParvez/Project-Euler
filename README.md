@@ -1,5 +1,5 @@
 ***
 # Project Euler
 ***
-My solutions to Project Euler problems.
+My solutions to [Project Euler](https://projecteuler.net/about) problems.
 ***
