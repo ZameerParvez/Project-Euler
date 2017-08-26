@@ -27,7 +27,7 @@ public class CommonUtils {
 	
 	public static List<Integer> getProperDivisors(int n) {
 		List<Integer> divisors = new ArrayList<>();
-		double limit = Math.sqrt((double) n);
+        double limit = Math.sqrt(n);
 		divisors.add(1);
 		for (int i = 2; i < limit; i++) {
 			if (n % i == 0) {
@@ -35,6 +35,18 @@ public class CommonUtils {
 				divisors.add(n / i);
 			}
 		}
+		if (n != 1 && (limit - (int) limit) == 0 && n % limit == 0) {
+			divisors.add((int) limit);
+		}
 		return divisors;
+	}
+	
+	public static int sumProperDivisors(int n) {
+		List<Integer> divisors = getProperDivisors(n);
+		int sum = 0;
+		for (int i : divisors) {
+			sum += i;
+		}
+		return sum;
 	}
 }
