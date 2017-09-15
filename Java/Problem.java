@@ -6,7 +6,7 @@ public abstract class Problem {
         long startTime = System.currentTimeMillis();
         String solution = solve();
         long duration = System.currentTimeMillis() - startTime;
-        System.out.printf("Solution: %s\nTook %d milliseconds", solution, duration);
+        System.out.printf("Solution: %s\nTook %d milliseconds\n", solution, duration);
     }
 
 }
