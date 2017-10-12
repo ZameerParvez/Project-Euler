@@ -7,7 +7,7 @@ public class Problem024 extends Problem {
 	public String solve() {
 		int n = 1000000;
 		String s = "0123456789";
-		//return getNthPermutationR(getPermutationsR(s), n);
+		//return getNthPermutationR(s, n);
 		return getNthPermutation(s, n);
 	}
 	
@@ -43,30 +43,10 @@ public class Problem024 extends Problem {
 		return digits;
 	}
 	
-	public String getNthPermutationR(List<String> permutations, int n) {
+	public String getNthPermutationR(String s, int n) {
+		List<String> permutations = CommonUtils.getPermutations(s);
 		Collections.sort(permutations);
 		return permutations.get(n - 1);
-	}
-	
-	//This method recursively finds all permutations of a string;
-	public List<String> getPermutationsR(String s) {
-		List<String> permutations = new ArrayList<>();
-		if (s.length() == 1) {
-			permutations.add(s);
-			return permutations;
-		}
-		
-		String subString = s.substring(1, s.length());
-		List<String> prevPermutations = getPermutationsR(subString);
-		
-		for (int i = 0; i < s.length(); i++) {
-			for (int j = 0; j < prevPermutations.size(); j++) {
-				String permutation = prevPermutations.get(j).substring(0, i) + s.charAt(0) + prevPermutations.get(j).substring(i);
-				permutations.add(permutation);
-			}
-		}
-		
-		return permutations;
 	}
 	
 	public static void main(String[] args) {

@@ -57,4 +57,24 @@ public class CommonUtils {
 		
 		return sum;
 	}
+	
+	public static List<String> getPermutations(String s) {
+		List<String> permutations = new ArrayList<>();
+		if (s.length() == 1) {
+			permutations.add(s);
+			return permutations;
+		}
+		
+		String subString = s.substring(1, s.length());
+		List<String> prevPermutations = getPermutations(subString);
+		
+		for (int i = 0; i < s.length(); i++) {
+			for (int j = 0; j < prevPermutations.size(); j++) {
+				String permutation = prevPermutations.get(j).substring(0, i) + s.charAt(0) + prevPermutations.get(j).substring(i);
+				permutations.add(permutation);
+			}
+		}
+		
+		return permutations;
+	}
 }
